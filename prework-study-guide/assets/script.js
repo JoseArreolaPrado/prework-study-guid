@@ -36,5 +36,19 @@ for (let i=0; i<topics.length; i++){
 //   console.log('Please try again!');
 // }
 
+function wait(ms){
+    return new Promise(
+        r => setTimeout(r, ms)
+    );
+}
 
 
+async function  makeTea()  {
+    console.log("Boile water");
+    console.log("Add tea bag");
+    console.log("WAIT!!");
+    await wait(3000);
+    console.log("Enjoy Tea :D ");
+};
+
+makeTea();
