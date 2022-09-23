@@ -66,8 +66,4 @@ async function listTopics(){
     }
 }
 
-console.log('Here are the topics we lerned through Prework:');
 
-listTopics();
-
-selectTopic();
