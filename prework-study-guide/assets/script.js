@@ -7,11 +7,10 @@ let Git = "Git";
 let JavaScript = "JavaScript";
 
 let topics = [HTML, CSS, Git, JavaScript];
-
-
-for (let i=0; i<topics.length; i++){
-    console.log(topics[i]);
-}
+let randomTopic = topics[Math.floor(Math.random()*topics.length)];
+// for (let i=0; i<topics.length; i++){
+//     console.log(topics[i]);
+// }
 
 
 
@@ -24,17 +23,23 @@ for (let i=0; i<topics.length; i++){
 
 // var topic = "HTML";
 
-// if (topic === 'HTML') {
-//   console.log("Let's study HTML!");
-// } else if (topic === 'CSS') {
-//   console.log("Let's study CSS!");
-// } else if (topic === 'Git') {
-//   console.log("Let's study Git!");
-// } else if (topic === 'JavaScript') {
-//   console.log("Let's study JavaScript!");
-// } else {
-//   console.log('Please try again!');
-// }
+async function selectTopic(){
+    await wait (5000);
+    if (randomTopic === 'HTML') {
+      console.log("Let's study " + randomTopic + "!");
+    } else if (randomTopic === 'CSS') {
+      console.log("Let's study "  + topics[1] + "!");
+    } else if (randomTopic === 'Git') {
+      console.log("Let's study " + topics[2] + "!");
+    } else if (randomTopic === 'JavaScript') {
+      console.log("Let's study " + topics[3]+ "!");
+    } else {
+      console.log('Please try again!');
+    }
+}
+
+
+
 
 function wait(ms){
     return new Promise(
@@ -51,4 +56,14 @@ async function  makeTea()  {
     console.log("Enjoy Tea :D ");
 };
 
-makeTea();
+// makeTea();
+
+
+async function listTopics(){
+    for ( let i = 0; i < topics.length; i++){
+        await wait(1000);
+        console.log(topics[i]);
+    }
+}
+
+
