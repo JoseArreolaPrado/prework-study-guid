@@ -7,7 +7,7 @@ let Git = "Git";
 let JavaScript = "JavaScript";
 
 let topics = [HTML, CSS, Git, JavaScript];
-let randomTopic = topics[Math.floor()(Math.random*topics.length)];
+let randomTopic = topics[Math.floor((Math.random()*topics.length))];
 
 // for (let i=0; i<topics.length; i++){
 //     console.log(topics[i]);
@@ -72,5 +72,3 @@ console.log('Here are the topics we lerned through Prework:');
 listTopics();
 
 selectTopic();
-
-console.log(randomTopic);
