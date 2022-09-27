@@ -112,6 +112,11 @@ p {
 
 .notebox-body {
     padding: 10px 15px;
+    border-radius: 5px;
+}
+
+.notebox-body textarea{
+    width: 100%;
 }
 
 #overlay {
