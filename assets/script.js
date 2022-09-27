@@ -72,3 +72,41 @@ console.log('Here are the topics we lerned through Prework:');
 listTopics();
 
 selectTopic();
+
+
+const openNoteButtons = document.querySelectorAll('[data-notebox-target]');
+const closeNoteButtons = document.querySelectorAll('[data-close-button]');
+const overlay = document.getElementById('overlay');
+
+openNoteButtons.forEach(button => {
+  button.addEventListener('click', () =>{
+    const notebox = document.querySelector(button.dataset.noteboxTarget)
+    openNotebox(notebox)
+  })
+});
+
+overlay.addEventListener('click', () => {
+  const notebox = document.querySelectorAll('.notebox.active')
+  notebox.forEach(notebox => {
+    closeNotebox(notebox)
+  })
+})
+
+closeNoteButtons.forEach(button => {
+  button.addEventListener('click', () =>{
+    const notebox = button.closest('.notebox')
+    closeNotebox(notebox)
+  })
+});
+
+function openNotebox(notebox){
+  if (notebox == null) return
+  notebox.classList.add('active')
+  overlay.classList.add('active')
+}
+
+function closeNotebox(notebox){
+  if (notebox == null) return
+  notebox.classList.remove('active')
+  overlay.classList.remove('active')
+}
